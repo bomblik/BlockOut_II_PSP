@@ -1,0 +1,46 @@
+BINDIR=.
+DOCDIR=.
+
+SOURCES=$(wildcard *.cpp wildcard GLApp/*cpp wildcard platforms/*cpp)
+OBJS=$(patsubst %.cpp, %.o, $(SOURCES))
+VERSION=2.5
+
+CC = psp-c++
+
+RELEASE_DIR=BlockOut_II
+
+TARGET=blockout2
+EXTRA_TARGETS=EBOOT.PBP
+PSP_EBOOT_TITLE=BlockOut II $(VERSION)
+PSP_EBOOT_ICON=block_icon.png
+PSP_LARGE_MEMORY=1
+PSP_FW_VERSION=390
+BUILD_PRX=1
+
+CFLAGS = -O2 -G0 -Wall -DPLATFORM_PSP -I../ImageLib/src/
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+LIBDIR = ../ImageLib/src/
+
+LIBS = -lpspnet -lpspnet_inet -lpspwlan -lSDL_mixer -lvorbisidec -lSDL_image -lpng -ljpeg -lz -lGL -lGLU -lpspgu -lstdc++ -limagelib
+
+LDFLAGS =
+
+PSPSDK=$(shell psp-config --pspsdk-path)
+PSPBIN = $(PSPSDK)/../bin
+CFLAGS += $(shell $(PSPBIN)/sdl-config --cflags)
+CXXFLAGS += $(shell $(PSPBIN)/sdl-config --cflags)
+LIBS += $(shell $(PSPBIN)/sdl-config --libs)
+
+include $(PSPSDK)/lib/build.mak
+
+release:
+	@rm -rf $(RELEASE_DIR)
+	@echo Creating release directory $(RELEASE_DIR)
+	@mkdir $(RELEASE_DIR)
+	@echo Copying files...
+	@cp -r images.psp $(RELEASE_DIR)
+	@cp -r sounds $(RELEASE_DIR)
+	@cp EBOOT.PBP $(RELEASE_DIR)
+	@echo Done

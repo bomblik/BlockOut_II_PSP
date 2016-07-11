@@ -1,0 +1,32 @@
+BINDIR=.
+DOCDIR=.
+
+CCXX = psp-c++
+
+SOURCES = $(wildcard *.cpp wildcard gif/*.cpp wildcard jpg/*.cpp)
+OBJS = $(SOURCES:.cpp=.o) png/hpng.o png/png/png.o  \
+                          png/png/pngerror.o  png/png/pnggccrd.o  png/png/pngget.o  png/png/pngmem.o  png/png/pngpread.o  png/png/pngread.o  png/png/pngrio.o  png/png/pngrtran.o  \
+                          png/png/pngrutil.o  png/png/pngset.o  png/png/pngtrans.o  png/png/pngvcrd.o  png/png/pngwio.o  png/png/pngwrite.o  png/png/pngwtran.o  png/png/pngwutil.o \
+                          png/zlib/adler32.o  png/zlib/compress.o  png/zlib/crc32.o  png/zlib/deflate.o  png/zlib/gzio.o  png/zlib/infback.o  png/zlib/inffast.o  png/zlib/inflate.o \
+                          png/zlib/inftrees.o  png/zlib/trees.o  png/zlib/uncompr.o  png/zlib/zutil.o
+
+TARGET_LIB = libimagelib.a
+
+
+PSP_LARGE_MEMORY=1
+PSP_FW_VERSION=390
+
+CFLAGS = -O2 -G0 -Wall -DPLATFORM_PSP
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+LIBDIR =
+
+LIBS = -lpng -ljpeg -lz -lstdc++
+
+LDFLAGS =
+
+PSPSDK=$(shell psp-config --pspsdk-path)
+PSPBIN = $(PSPSDK)/../bin
+
+include $(PSPSDK)/lib/build.mak
