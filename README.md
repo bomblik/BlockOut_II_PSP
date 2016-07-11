@@ -12,7 +12,7 @@ https://en.wikipedia.org/wiki/Blockout
 
 This port is based on BlockOut II release 2.5
 
-##Game screenshot
+##Game screenshots
 
 Screenshots of different block sets
 
