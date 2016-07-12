@@ -60,7 +60,7 @@ Copy BlockOut_II directory to Sony PSP device
     CROSS                    - confirm / drop block
     RIGHT TRIGGER            - cancel / exit game
 
-    D-PAD                    - move block
+    D-PAD                    - move block / select character (hall of fame)
 
     SQUARE                   - rotate block around X axis counterclockwise
     SQUARE   + LEFT TRIGGER  - rotate block around X axis clockwise
