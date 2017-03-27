@@ -1,4 +1,4 @@
-#BlockOut_II_PSP
+# BlockOut_II_PSP
 
 BlockOut_II_PSP is a Sony Playstation Portable port of BlockOut II game by Jean-Luc PONS.
 
@@ -12,7 +12,7 @@ https://en.wikipedia.org/wiki/Blockout
 
 This port is based on BlockOut II release 2.5
 
-##Game screenshots
+## Game screenshots
 
 Screenshots of different block sets
 
@@ -22,16 +22,16 @@ Screenshots of different block sets
   <img src="Screenshots/3d_mania_screenshot.png" width="480"/>
 </p>
 
-##Binary installation
+## Binary installation
 
 https://github.com/bomblik/BlockOut_II_PSP/releases
 
 Copy BlockOut_II directory to Sony PSP device
 (e.g. to ms0:/psp/game directory on Memory Stick).
 
-##Source installation
+## Source installation
 
-###Compilation
+### Compilation
 
 In order to compile BlockOut_II_PSP, please install psptoolchain
 and set development environment.
@@ -50,12 +50,12 @@ To prepare data for installation invoke
 
 That would create all required data in BlockOut_II directory
 
-###Installation
+### Installation
 
 Copy BlockOut_II directory to Sony PSP device
 (e.g. to ms0:/psp/game directory on Memory Stick).
 
-##Key mappings
+## Key mappings
 
     CROSS                    - confirm / drop block
     RIGHT TRIGGER            - cancel / exit game
@@ -71,7 +71,7 @@ Copy BlockOut_II directory to Sony PSP device
 
     START                    - pause / resume game
 
-##Online score database
+## Online score database
 
 You can play against / compare your score to online score database, using wifi connection.
 
